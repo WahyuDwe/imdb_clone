@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:imdb_clone/app/ui/screens/main/main_screen.dart';
+import 'package:imdb_clone/app/ui/screens/main/main_screen_view_model.dart';
 import 'package:imdb_clone/app/ui/screens/splash/splash_screen.dart';
 import 'package:imdb_clone/app/ui/screens/splash/splash_screen_view_model.dart';
 
@@ -21,7 +22,9 @@ class AppRouterConfig {
     GoRoute(
       path: '/main',
       name: AppRoute.main,
-      builder: (context, state) => const MainScreen(),
+      builder: (_, __) => MainScreen(
+        viewModel: MainScreenViewModel(),
+      ),
     ),
   ];
 }
